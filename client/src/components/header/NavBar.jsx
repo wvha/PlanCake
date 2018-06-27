@@ -60,22 +60,23 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <div className="outer-div">
+      <div className="outer-div" id="nav-bar">
         <div className="header-navbar grid">
           <a href="/">
             <img className="logo jsas" src="plancakelogo.png" />
           </a>
             {
               this.props.username !== null
-                ? <div className="nav-links-loggedIn">
-                <div>
+                ? 
+                <div className="nav-links-loggedIn">
+                <div className="nav-collapse">
                   <Inbox 
                     invites={this.props.invites} 
                     acceptInvite={this.props.acceptInvite}
                     ignoreInvite={this.props.ignoreInvite}
                   />
                 </div>
-                <div>
+                <div className="nav-collapse">
                   <Link to='/loggedInView' className="header-icon">
                     <Icon 
                       name='calendar' 
@@ -83,17 +84,24 @@ export default class NavBar extends Component {
                     />
                   </Link>
                 </div>
-                <div >
+                <div className="nav-collapse">
                   <h3 className="nav-name">{this.props.userData.firstName}</h3>
                 </div>
-                <div >
+                <div className="nav-collapse">
                   <Logout logout={this.logout} className="nav-name"/>
                 </div> 
-                </div>
-              : <div className="nav-links">
-                <HashLink smooth to="/#how-it-works" className="hashlink"><h3>How It Works</h3></HashLink>
-                <HashLink smooth to="/#about-us" className="hashlink"><h3>About Us</h3></HashLink>
-                <h3 onClick={this.handleModal.bind(this)}>Login</h3>
+
+              <div>
+              <Icon name='bars' id='nav-dropdown-bars' className="header-icon" />
+              </div>
+              </div>
+              : 
+                <div className="nav-links">
+                <HashLink smooth to="/#how-it-works" className="hashlink nav-collapse"><h3>How It Works</h3></HashLink>
+                <HashLink smooth to="/#about-us" className="hashlink nav-collapse"><h3>About Us</h3></HashLink>
+                <h3 className="nav-collapse" onClick={this.handleModal.bind(this)}>Login</h3>
+              
+                <Icon name='bars' id='nav-dropdown-bars' className="header-icon" />
               </div>
           }
           {

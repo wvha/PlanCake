@@ -160,8 +160,8 @@ hr{
 
 .logo{
   grid-area: 1 / 1 / 2 / 1;
-  width: auto;
-  height: 90%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   padding: 5px;
   margin-top: .5em;
@@ -170,6 +170,7 @@ hr{
 .header-navbar img{
   width: 100%;
   height: auto;
+  /* height: 100%; */
   max-height: 50px;
   max-width: 200px;
 }
@@ -229,6 +230,20 @@ hr{
 .header-icon :hover{
   color: rgb(121, 121, 121) !important;
 }
+
+#nav-dropdown-bars{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  /* #nav-bar a:not(:first-child) {display: none;} */
+  .nav-collapse {display: none;}
+  #nav-dropdown-bars {
+    display: block;
+    float: right;
+  }
+}
+
 
 /*******************/
 /*** splash-body ***/
