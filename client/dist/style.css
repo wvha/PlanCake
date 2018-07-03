@@ -35,15 +35,6 @@ body{
   max-width: 1260px;
 }
 
-.splash{
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 65px repeat(11, 1fr);
-  grid-gap: .25em;
-  width: 80vw;
-  margin: auto;
-  flex-direction: column;
-}
-
 .dashboard{
   grid-template-columns: 15% repeat(11, 1fr);
   grid-template-rows: 60px 1fr;
@@ -70,23 +61,26 @@ body{
 /***     App     ***/
 /*******************/
 
-.body{
+/* .body{
   grid-area: 2 / 1 / 12 / 13;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1.25fr .75fr; 
   flex: 1;
-}
+} */
 
 .splash-image{
+  display: block;
   z-index: -1;
-  grid-row: 1;
   opacity: .9;
   overflow: hidden;
   width: 100%;
-  height: 90vh;
+  max-width: 1260px;
   border-radius: 4px;
   filter: drop-shadow(0 0 10px #333);
   margin-bottom: .25rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .about-us{
@@ -159,17 +153,18 @@ hr{
 }
 
 .logo{
-  grid-area: 1 / 1 / 2 / 1;
+  /* grid-area: 1 / 1 / 2 / 1; */
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  /* height: 100%; */
+  /* object-fit: contain; */
   padding: 5px;
   margin-top: .5em;
+  justify-content: left;
 }
 
 .header-navbar img{
   width: 100%;
-  height: auto;
+  /* height: auto; */
   /* height: 100%; */
   max-height: 50px;
   max-width: 200px;
@@ -182,7 +177,7 @@ hr{
 }
 
 .nav-links-loggedIn{
-  grid-area: 1 / 5 / 2 / 7;
+  /* grid-area: 1 / 5 / 2 / 7; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -241,6 +236,7 @@ hr{
   #nav-dropdown-bars {
     display: block;
     float: right;
+    justify-content: right;
   }
 }
 
@@ -251,14 +247,16 @@ hr{
 
 .how-it-works{
   font-family: 'Poppins', sans-serif;
-  grid-row: 2;
-  grid-template-rows: 1fr repeat(6, 175px);
-  width: 75%;
+  max-width: 1260px;
   margin: auto;
   border: solid 1px rgb(207, 207, 207);
   grid-gap: 1rem 0;
   border-radius: 6px;
   padding: 1rem 1rem;
+}
+
+.how-title{
+  
 }
 
 .how-row1{
