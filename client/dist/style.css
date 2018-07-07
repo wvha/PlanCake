@@ -155,19 +155,18 @@ hr{
 .logo{
   /* grid-area: 1 / 1 / 2 / 1; */
   width: 100%;
-  /* height: 100%; */
-  /* object-fit: contain; */
   padding: 5px;
-  margin-top: .5em;
+  /* margin-top: .5em;
+  margin-bottom: .5em; */
   justify-content: left;
 }
 
 .header-navbar img{
-  width: 100%;
-  /* height: auto; */
+  width: 180px;
+  height: auto;
   /* height: 100%; */
-  max-height: 50px;
-  max-width: 200px;
+  /* max-height: 50px;
+  max-width: 200px; */
 }
 
 .nav-links{
@@ -228,6 +227,8 @@ hr{
 
 #nav-dropdown-bars{
   display: none;
+  justify-content: right;
+  float: right;
 }
 
 @media screen and (max-width: 600px) {
@@ -236,7 +237,7 @@ hr{
   #nav-dropdown-bars {
     display: block;
     float: right;
-    justify-content: right;
+    /* justify-content: right; */
   }
 }
 
@@ -249,14 +250,11 @@ hr{
   font-family: 'Poppins', sans-serif;
   max-width: 1260px;
   margin: auto;
-  border: solid 1px rgb(207, 207, 207);
-  grid-gap: 1rem 0;
-  border-radius: 6px;
-  padding: 1rem 1rem;
-}
-
-.how-title{
-  
+  /* border: solid 1px rgb(207, 207, 207); */
+  /* grid-gap: 1rem 0; */
+  /* border-radius: 6px; */
+  padding: 5rem 5rem;
+  /* padding: 30px; */
 }
 
 .how-row1{
