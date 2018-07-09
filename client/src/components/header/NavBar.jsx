@@ -13,6 +13,7 @@ export default class NavBar extends Component {
     super(props);
     this.state = {
       modalIsOpen: false,
+      dropdownIsOpen: false,
       navView: 'login',
       error: ''
     }
@@ -22,6 +23,15 @@ export default class NavBar extends Component {
     this.sendLogin = this.sendLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.handleError = this.handleError.bind(this);
+    this.handleDropdown = this.handleDropdown.bind(this);
+  }
+
+  handleDropdown() {
+    console.log('click!');
+    // document.getElementsByClassName("nav-dropdown-links");
+    this.setState({
+      dropdownIsOpen: !this.state.dropdownIsOpen
+    });
   }
 
   handleError(errorMsg) {
@@ -92,7 +102,15 @@ export default class NavBar extends Component {
                 </div> 
 
               <div>
-              <Icon name='bars' id='nav-dropdown-bars' className="header-icon" />
+              <Icon name='bars' id='nav-dropdown-bars' className="header-icon" onClick={() => this.handleDropdown()} />
+                <div className="nav-dropdown-links">
+                  <Link to='/loggedInView' className="header-icon">
+                    <Icon 
+                      name='calendar' 
+                      onClick={this.props.handleHomeReloadItineraries}
+                    />
+                  </Link>
+                </div>
               </div>
               </div>
               : 
@@ -101,7 +119,12 @@ export default class NavBar extends Component {
                 <HashLink smooth to="/#about-us" className="hashlink nav-collapse"><h3>About Us</h3></HashLink>
                 <h3 className="nav-collapse" onClick={this.handleModal.bind(this)}>Login</h3>
               
-                <Icon name='bars' id='nav-dropdown-bars' className="header-icon" />
+                <Icon name='bars' id='nav-dropdown-bars' className="header-icon" onClick={() => this.handleDropdown()} />
+                  <div className="nav-dropdown-links">
+                    <HashLink smooth to="/#how-it-works" className="hashlink nav-collapse"><h4>How It Works</h4></HashLink>
+                    <HashLink smooth to="/#about-us" className="hashlink nav-collapse"><h4>About Us</h4></HashLink>
+                    <h4 className="nav-collapse" onClick={this.handleModal.bind(this)}>Login</h4>
+                  </div>
               </div>
           }
           {
