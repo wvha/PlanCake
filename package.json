@@ -9,7 +9,7 @@
     "dev": "jest --watch",
     "test": "jest",
     "eslint": "eslint --ignore-path .eslintignore .",
-    "start": "NODE_ENV=production node server/index.js",
+    "start": "node server/index.js",
     "build": "webpack -p"
   },
   "repository": {
